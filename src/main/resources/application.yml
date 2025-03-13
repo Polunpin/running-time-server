@@ -59,9 +59,9 @@ wechat:
     appSecret: 9a4e5d01d729f1b9951b7d37a3375da0
 
 mybatis-plus:
-  mapper-locations: classpath*:mapperxml/*Mapper.xml
+  mapper-locations: classpath*:mapper/*Mapper.xml
   # 配置slq打印日志 生产环境
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-mybatis:
-  mapper-locations: classpath*:mapper/*Mapper.xml
+#mybatis:
+#  mapper-locations: classpath*:mapper/*Mapper.xml

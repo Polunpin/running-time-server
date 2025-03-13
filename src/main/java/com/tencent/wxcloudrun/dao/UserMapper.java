@@ -1,4 +1,4 @@
-package com.tencent.wxcloudrun.mapper;
+package com.tencent.wxcloudrun.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.tencent.wxcloudrun.model.entity.User;

@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tencent.wxcloudrun.common.result.Result;
 import com.tencent.wxcloudrun.common.security.token.store.AuthContext;
-import com.tencent.wxcloudrun.mapper.TrackMapper;
+import com.tencent.wxcloudrun.dao.TrackMapper;
 import com.tencent.wxcloudrun.model.entity.Track;
 import com.tencent.wxcloudrun.model.entity.User;
 import com.tencent.wxcloudrun.model.request.IdBody;

@@ -1,0 +1,5 @@
+com.runningtime.server.common.mybatis.MybatisPlusConfiguration
+com.runningtime.server.common.mybatis.MybatisPlusAutoFillConfiguration
+com.runningtime.server.common.oss.aliyun.OssAutoConfiguration
+com.runningtime.server.wechat.WechatProperties
+
