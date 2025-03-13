@@ -5,13 +5,63 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_ADDRESS}/${MYSQL_DATABASE:springboot_demo}
-    username: ${MYSQL_USERNAME}
-    password: ${MySQL_PASSWORD}
+    url: jdbc:mysql://sh-cynosdbmysql-grp-89aojr2u.sql.tencentcdb.com:23820/springboot_demo?useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Hongkong
+    username: root
+    password: YZVXiL7wjCVfGWd
   mvc:
     view:
       suffix: .html
       prefix: /
+  data:
+    # redis 缓存数据库
+    redis:
+      host: xdsfiekj.redis.dwvbua88.30pmnp9b.com
+      port: 6379
+      password:
+      database: 0
 
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+
+#  Swagger for knife4j 接口文档配置
+knife4j:
+  enable: true
+  setting:
+    language: zh-CN
+    enable-footer-custom: true
+    footer-custom-content: 2024 &copy; HOUCLOUD | YUNHOU·HUANG
+    enable-dynamic-parameter: false
+    enable-debug: true
+    enable-open-api: false
+    enable-group: true
+  cors: false
+  production: false
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'front'
+      display-name: "用户端"
+      paths-to-match: '/api/front/**'
+      packages-to-scan: com.tencent.wxcloudrun.controller
+
+wechat:
+  weapp:
+    appid: wx5745b3f0a911e8d8
+    appSecret: 9a4e5d01d729f1b9951b7d37a3375da0
+
+mybatis-plus:
+  mapper-locations: classpath*:mapperxml/*Mapper.xml
+  # 配置slq打印日志 生产环境
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml

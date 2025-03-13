@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tencent.wxcloudrun.mapper.TrackMapper">
+    <select id="selectRunningCalendar" parameterType="map"
+            resultType="com.tencent.wxcloudrun.model.response.RunningCalendarResponse">
+        SELECT
+            DATE (created_at) AS `date`,
+            SUM(distance) AS distance
+        FROM t_track
+        WHERE user_id = #{userId}
+          AND deleted_at IS NULL
+          AND (YEAR (created_at) = #{year}
+           OR #{year} IS NULL)
+          AND (MONTH (created_at) = #{month}
+           OR #{month} IS NULL)
+        GROUP BY DATE (created_at)
+        ORDER BY `date`
+    </select>
+</mapper>
